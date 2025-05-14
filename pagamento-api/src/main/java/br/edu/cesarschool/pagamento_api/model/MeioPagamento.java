@@ -1,6 +1,14 @@
 package br.edu.cesarschool.pagamento_api.model;
 
+import jakarta.persistence.*;
+
+
+@Entity
 public class MeioPagamento {
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "pagamento_seq")
+    @SequenceGenerator(name = "pagamento_seq", sequenceName = "pagamento_sequence", allocationSize = 1)
+    
     private Long id;
     private String nome;
     private Double valorMaximo;
